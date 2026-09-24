@@ -136,7 +136,6 @@ header {
     position: relative;
 }
 
-
 .logo {
     font-size: 28px;
     font-weight: 800;
@@ -787,7 +786,7 @@ footer span {
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .cards {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -914,6 +913,11 @@ footer span {
         height: 270px;
     }
 }
+
+/* ===================================================
+   ANIMATIONS
+=================================================== */
+
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -937,6 +941,7 @@ footer span {
 .hero a {
     animation: fadeUp 1s ease 0.6s forwards;
 }
+
 .profile-img {
     width: 250px;
     border-radius: 50%;
@@ -953,6 +958,7 @@ footer span {
         transform: translateY(-15px);
     }
 }
+
 .project-card {
     transition: all 0.4s ease;
 }
@@ -961,6 +967,7 @@ footer span {
     transform: translateY(-10px);
     box-shadow: 0 10px 30px #007bff55;
 }
+
 .reveal {
     opacity: 0;
     transform: translateY(70px);
@@ -970,64 +977,4 @@ footer span {
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* About Me Section */
-.about {
-    padding: 100px 10%;
-    background: #0b1120;
-    color: white;
-}
-
-.about-container {
-    max-width: 1100px;
-    margin: auto;
-}
-
-.about-text h2 {
-    font-size: 45px;
-    margin-bottom: 20px;
-}
-
-.about-text h2 span {
-    color: #007bff;
-}
-
-.about-text h3 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.about-text p {
-    font-size: 17px;
-    line-height: 1.8;
-    color: #cbd5e1;
-    margin-bottom: 20px;
-}
-
-.about-btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: 0.3s;
-}
-
-.about-btn:hover {
-    background: #0056b3;
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px #007bff80;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .about {
-        padding: 70px 6%;
-    }
-
-    .about-text h2 {
-        font-size: 35px;
-    }
 }
