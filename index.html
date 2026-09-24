@@ -30,8 +30,9 @@
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#About me">About me</a></li>
+        <li><a href="#Projects">Projects</a></li>
+        <li><a href="#Contacts">Contacts</a></li>
       </ul>
       
   </header>
@@ -94,6 +95,35 @@
       </div>
     </div>
   </section>
+  
+<section id="About me" class="about reveal">
+    <div class="about-container">
+
+        <div class="about-text">
+            <h2>About <span>Me</span></h2>
+
+            <h3>I'm Fares Ayman</h3>
+
+            <p>
+                I'm a passionate Web Developer and Mobile App Developer
+                who loves creating modern, responsive, and user-friendly
+                websites and mobile applications.
+            </p>
+
+            <p>
+                I enjoy learning new technologies, solving problems,
+                and turning creative ideas into real digital projects.
+                My goal is to build applications that provide a great
+                user experience and make a positive impact.
+            </p>
+
+            <a href="#contact" class="about-btn">
+                Contact Me
+            </a>
+        </div>
+
+    </div>
+</section>
 
   <!-- Projects Section -->
   <section class="section" id="projects">
@@ -230,3 +260,19 @@
 </body>
 
 </html>
+<script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+document.querySelectorAll("section").forEach(section => {
+    section.classList.add("reveal");
+    observer.observe(section);
+});
+</script>
