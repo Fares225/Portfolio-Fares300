@@ -461,7 +461,7 @@ header {
 =================================================== */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 26px;
 }
 
@@ -639,6 +639,406 @@ header {
 .project-card:hover .b2 { height: 50%; }
 .project-card:hover .b3 { height: 90%; }
 .project-card:hover .b4 { height: 60%; }
+
+/* Mockup: Chatlx Real-Time Chat */
+.preview-chat {
+    background: radial-gradient(circle at center, rgba(255, 204, 0, 0.16) 0%, #0d0d10 75%);
+}
+
+.mini-chat-frame {
+    width: 155px;
+    height: 125px;
+    background: #16161b;
+    border: 1.5px solid #282832;
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: transform var(--tr-base);
+}
+
+.project-card:hover .mini-chat-frame {
+    transform: scale(1.05);
+}
+
+.mini-chat-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.chat-avatar-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary);
+}
+
+.chat-header-title {
+    font-size: 8px;
+    font-weight: 700;
+    color: var(--text-white);
+    letter-spacing: 0.5px;
+    font-family: var(--font-mono);
+}
+
+.chat-status-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #10b981;
+    margin-left: auto;
+    box-shadow: 0 0 6px #10b981;
+}
+
+.mini-chat-body {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+    justify-content: center;
+}
+
+.chat-bubble {
+    font-size: 7.5px;
+    line-height: 1.2;
+    padding: 4px 7px;
+    border-radius: 7px;
+    max-width: 85%;
+    display: inline-block;
+    transition: transform var(--tr-base);
+}
+
+.bubble-received {
+    align-self: flex-start;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--silver-200);
+    border-bottom-left-radius: 2px;
+}
+
+.bubble-sent {
+    align-self: flex-end;
+    background: linear-gradient(135deg, #ffd60a, #e6b800);
+    color: #0a0a0d;
+    font-weight: 600;
+    border-bottom-right-radius: 2px;
+}
+
+.bubble-typing {
+    align-self: flex-start;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 4px 6px;
+    border-radius: 6px;
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+
+.bubble-typing span {
+    width: 3.5px;
+    height: 3.5px;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: chatTyping 1.2s infinite ease-in-out;
+}
+
+.bubble-typing span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.bubble-typing span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes chatTyping {
+    0%, 100% { transform: translateY(0); opacity: 0.4; }
+    50% { transform: translateY(-2px); opacity: 1; }
+}
+
+.project-card:hover .bubble-sent {
+    transform: translateX(-2px);
+}
+
+.project-card:hover .bubble-received {
+    transform: translateX(2px);
+}
+
+/* Mockup: Nova AI Studio */
+.preview-ai {
+    background: radial-gradient(circle at center, rgba(255, 204, 0, 0.18) 0%, #0d0d10 75%);
+}
+
+.mini-ai-frame {
+    width: 155px;
+    height: 125px;
+    background: #16161b;
+    border: 1.5px solid #282832;
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    transition: transform var(--tr-base);
+}
+
+.project-card:hover .mini-ai-frame {
+    transform: scale(1.05);
+}
+
+.mini-ai-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ai-spark-icon {
+    font-size: 9px;
+    color: var(--primary);
+    animation: sparkRotate 4s linear infinite;
+}
+
+@keyframes sparkRotate {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.15); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+.ai-header-title {
+    font-size: 8px;
+    font-weight: 700;
+    color: var(--text-white);
+    letter-spacing: 0.5px;
+    font-family: var(--font-mono);
+}
+
+.ai-chip-badge {
+    font-size: 6.5px;
+    padding: 1px 5px;
+    border-radius: 4px;
+    background: rgba(255, 204, 0, 0.18);
+    color: var(--primary);
+    margin-left: auto;
+    font-weight: 700;
+}
+
+.mini-ai-body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    justify-content: center;
+}
+
+.ai-prompt-box {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    padding: 4px 6px;
+    border: 1px solid rgba(255, 204, 0, 0.12);
+}
+
+.ai-prompt-box i {
+    font-size: 7px;
+    color: var(--primary);
+}
+
+.ai-prompt-line {
+    height: 3px;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 2px;
+    flex: 1;
+}
+
+.ai-response-box {
+    background: rgba(255, 204, 0, 0.06);
+    border: 1px solid rgba(255, 204, 0, 0.2);
+    border-radius: 6px;
+    padding: 5px 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ai-code-line {
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #ffd60a, rgba(255, 204, 0, 0.25));
+    transition: width var(--tr-base);
+}
+
+.project-card:hover .ai-code-line.l1 { width: 95% !important; }
+.project-card:hover .ai-code-line.l2 { width: 75% !important; }
+
+/* Mockup: Velora Luxury Menswear */
+.preview-velora {
+    background: radial-gradient(circle at center, rgba(255, 204, 0, 0.18) 0%, #0d0d10 75%);
+}
+
+.mini-velora-frame {
+    width: 158px;
+    height: 130px;
+    background: #16161b;
+    border: 1.5px solid #282832;
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: transform var(--tr-base);
+}
+
+.project-card:hover .mini-velora-frame {
+    transform: scale(1.05);
+}
+
+.mini-velora-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.velora-crown-icon {
+    font-size: 9px;
+    color: var(--primary);
+    animation: veloraShimmer 2.5s ease-in-out infinite;
+}
+
+@keyframes veloraShimmer {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(255, 204, 0, 0.4)); }
+    50% { transform: scale(1.15) rotate(-5deg); filter: drop-shadow(0 0 8px rgba(255, 204, 0, 0.9)); }
+}
+
+.velora-header-title {
+    font-size: 7.5px;
+    font-weight: 700;
+    color: var(--text-white);
+    letter-spacing: 0.8px;
+    font-family: var(--font-mono);
+}
+
+.velora-chip-badge {
+    font-size: 6.5px;
+    padding: 1px 5px;
+    border-radius: 4px;
+    background: rgba(255, 204, 0, 0.16);
+    color: var(--primary);
+    margin-left: auto;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.mini-velora-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.velora-product-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 204, 0, 0.18);
+    border-radius: 8px;
+    padding: 5px 6px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: border-color var(--tr-base), background var(--tr-base);
+}
+
+.project-card:hover .velora-product-card {
+    background: rgba(255, 204, 0, 0.06);
+    border-color: rgba(255, 204, 0, 0.4);
+}
+
+.velora-item-badge {
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    font-size: 5.5px;
+    padding: 1px 3px;
+    border-radius: 3px;
+    background: rgba(255, 204, 0, 0.2);
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+.velora-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 0;
+}
+
+.velora-suit-icon {
+    font-size: 19px;
+    color: #cbd5e1;
+    transition: transform var(--tr-base), color var(--tr-base);
+}
+
+.project-card:hover .velora-suit-icon {
+    transform: scale(1.1);
+    color: var(--primary);
+}
+
+.velora-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.velora-item-title {
+    font-size: 7px;
+    font-weight: 600;
+    color: var(--text-white);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.velora-item-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.velora-price {
+    font-size: 7px;
+    font-weight: 700;
+    color: var(--primary);
+    font-family: var(--font-mono);
+}
+
+.velora-bag-btn {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    background: rgba(255, 204, 0, 0.22);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6px;
+    transition: background var(--tr-base), color var(--tr-base);
+}
+
+.project-card:hover .velora-bag-btn {
+    background: var(--primary);
+    color: #0a0a0d;
+}
 
 /* Project Card Content */
 .project-content {
